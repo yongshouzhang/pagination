@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="pagination.js"></script>
+		<title>测试文件 </title>
+	</head>
+	<body>
+		<div id="pg"></div>
+		<script type="text/javascript">
+		(function(){
+			window.onload=function(){
+				var pg= new pagination(document.getElementById("pg"));
+
+				var getData= function(pi,ps){
+					pg.update({
+						pi: pi,
+						ps: ps,
+						count: 185,
+						cb: getData
+					});
+				};
+				getData(1,10);
+			};
+		})();
+		</script>
+	</body>
+</html>
